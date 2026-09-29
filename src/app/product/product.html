@@ -1,0 +1,20 @@
+  <app-product-form />
+  <br>
+  <br>
+
+<app-product-count />
+
+<br><br>
+ 
+ <h3>Product List</h3>
+    <ul>
+      @for (p of (products$ | async) ?? []; track p.id) {
+        <li>{{ p.name }} - ₹{{ p.price }}</li>
+      }
+    </ul>
+
+
+    <br>
+    <br>
+
+    <button class="btn btn-primary" (click)="Logout()">Logout</button>
